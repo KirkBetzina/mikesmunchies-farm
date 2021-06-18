@@ -1,9 +1,9 @@
 import motor.motor_asyncio
 
-MONGO_DETAILS = "mongodb://localhost:27017"
+MONGO_DETAILS = "mongodb+srv://frostyworks:Hamilt10@cluster0.5vnhv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS)
 
-database = client.students
+database = client.menu
 
-student_collection = database.get_collection("students_collection")
+student_collection = database.get_collection("menu_collection")
