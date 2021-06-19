@@ -1,12 +1,14 @@
-from server.models.Menu import Menu
+from app.server.models.Menu import Menu
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import HTTPException
 from starlette.responses import Response
-
+from app.routes.menu import router as MenuRouter 
 app = FastAPI()
 
-from database import (
+app.include_router(MenuRouter, tags=["Menu"], prefix="/menu")
+
+from app.server.database import (
     fetch_one_menu,
     fetch_all_menus,
     create_menu,
